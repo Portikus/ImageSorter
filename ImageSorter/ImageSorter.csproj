@@ -78,6 +78,12 @@
     <Reference Include="Universial.Core">
       <HintPath>..\packages\Universial.1.0\Universial.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Universial.Test">
+      <HintPath>..\packages\Universial.1.0\Universial.Test.dll</HintPath>
+    </Reference>
+    <Reference Include="Universial.WPF">
+      <HintPath>..\packages\Universial.1.0\Universial.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

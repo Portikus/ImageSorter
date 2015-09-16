@@ -46,6 +46,16 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Universial.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Universial.1.0\Universial.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Universial.Test">
+      <HintPath>..\packages\Universial.1.0\Universial.Test.dll</HintPath>
+    </Reference>
+    <Reference Include="Universial.WPF">
+      <HintPath>..\packages\Universial.1.0\Universial.WPF.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
