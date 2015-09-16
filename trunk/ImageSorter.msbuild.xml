@@ -2,24 +2,22 @@
 
 <!-- 
 
-    C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe DisiModelTesterV2\dmt.msbuild.xml
+    C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe ImageSorter.msbuild.xml
 
 -->
 
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Help">
 
   <PropertyGroup>
-    <SolutionDir>$(MSBuildProjectDirectory)\..\</SolutionDir>
-    <SolutionPath>$(SolutionDir)DisiModelTesterV2.sln</SolutionPath>
+    <SolutionDir>$(MSBuildProjectDirectory)\</SolutionDir>
+    <SolutionPath>$(SolutionDir)ImageSorter.sln</SolutionPath>
     <VSTools>$(VS110COMNTOOLS)</VSTools>
     <AdditionalOptions>TreatWarningsAsErrors=True</AdditionalOptions>
     <JetBrainsDupFinder>$(MSBuildProjectDirectory)\..\External\JetBrains.ReSharper.CommandLineTools\dupfinder.exe</JetBrainsDupFinder>
     <JetBrainsInspector>$(MSBuildProjectDirectory)\..\External\JetBrains.ReSharper.CommandLineTools\inspectcode.exe</JetBrainsInspector>
     <DupXsl>$(MSBuildProjectDirectory)\..\External\Xsl\duplicates.xsl</DupXsl>
     <NUnitRunner>$(MSBuildProjectDirectory)\..\External\NUnit\bin\nunit-console.exe</NUnitRunner>
-    <DMTTestFilter>$(MSBuildProjectDirectory)\..\Bin\x64_Release\DisiModelTester.Tests.*.dll;$(MSBuildProjectDirectory)\..\Bin\x64_Release\DisiInterfaceProxy.Tests*.dll</DMTTestFilter>
 	<NSIS>&quot;$(MSBuildProjectDirectory)\..\External\NSIS\makensis.exe&quot;</NSIS>
-	<ChangeLog>&quot;$(MSBuildProjectDirectory)\..\External\ChangeLogGenerator\ChangeLogGenerator.exe&quot;</ChangeLog>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -29,14 +27,10 @@
   <ItemGroup>
     <DefaultConfigurations Include="Debug;Release" />
     <CleanBuildTargets  Include="Clean;Build" />
-
   </ItemGroup>
 
-
   <Target Name="Build">
-
     <MSBuild Projects="$(SolutionPath)" Properties="Configuration=%(DefaultConfigurations.Identity);DevEnvDir=$(VSTools);$(AdditionalOptions)" />
-
   </Target>
 
   <Target Name="BuildClean">
@@ -54,36 +48,10 @@
   <Target Name="CodeAnalysis">
     <MSBuild Projects="$(SolutionPath)" Targets="%(Combined.Targets)" Properties="DevEnvDir=$(VSTools);RunCodeAnalysis=true" />
   </Target>
-
-  <Target Name="RunTests">
-
-    <Error Condition="!Exists($(NUnitRunner))" Text="NUnit executable path '$(NUnitRunner)' does not exist" />
-
-    <Error Condition="$(DMTTestFilter)==''" Text="DMT Test Filter is empty" />
-
-    <MakeDir Directories="$(MSBuildProjectDirectory)\..\UnitTestResults" />
-    
-    <ItemGroup>
-      <DMTTests Include="$(DMTTestFilter)"></DMTTests>
-    </ItemGroup>
-    
-    <PropertyGroup>
-      <DMTNunitFiles>@(DMTTests->'&quot;%(FullPath)&quot;', ' ')</DMTNunitFiles>
-    </PropertyGroup>
-
-    
-    <Exec Command="$(NUnitRunner) /apartment=STA /domain=Single $(DMTNunitFiles) /timeout=60000 /result:&quot;$(MSBuildProjectDirectory)\..\UnitTestResults\DmtTests_$(CurrentDate).xml&quot;" 
-          WorkingDirectory="$(MSBuildProjectDirectory)\..\Bin\x64_Release\"
-          />
-    
-  </Target>
-  
-  
-
+ 
   <Target Name="ResharperAll">
 
     <CallTarget Targets="FindDuplicates" />
-    <CallTarget Targets="InspectCode" />
  
   </Target>
 
@@ -107,10 +75,6 @@
     <Error Condition="$(DuplicateLength.Length)> 0" Text="Duplicates found"></Error>
   </Target>
 
-  <Target Name="InspectCode">
-    <!-- Currently empty, as Team City should do this -->
-  </Target>
-  
   
   <!-- Creates a deployable zip directory with a version and a link, removes test dlls -->
   <Target Name="Deploy" >

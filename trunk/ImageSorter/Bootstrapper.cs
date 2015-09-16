@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using ImageSorter.View;
 using ImageSorter.ViewModel;
 using Microsoft.Practices.ServiceLocation;
@@ -26,6 +27,7 @@ namespace ImageSorter
         {
             base.ConfigureContainer();
             Container.RegisterInstance<IEventAggregator>(Container.Resolve<EventAggregator>());
+            var _test = new ContainerControlledLifetimeManager();
         }
     }
 }
