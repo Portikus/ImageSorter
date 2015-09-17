@@ -27,7 +27,6 @@ namespace ImageSorter
         {
             base.ConfigureContainer();
             Container.RegisterInstance<IEventAggregator>(Container.Resolve<EventAggregator>());
-            var _test = new ContainerControlledLifetimeManager();
         }
     }
 }
