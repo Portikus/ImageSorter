@@ -108,9 +108,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Events\Args\FilterDefinitionEventArgs.cs" />
+    <Compile Include="Events\NewFilterDefinitionEvent.cs" />
     <Compile Include="Model\FilterDefinition.cs" />
     <Compile Include="ViewModel\FilterDefinitionsViewModel.cs" />
     <Compile Include="ViewModel\ShellViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\FilterDefinitonsView.xaml.cs">
       <DependentUpon>FilterDefinitonsView.xaml</DependentUpon>
     </Compile>

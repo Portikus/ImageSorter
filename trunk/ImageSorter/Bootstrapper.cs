@@ -1,9 +1,8 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using ImageSorter.View;
 using ImageSorter.ViewModel;
 using Microsoft.Practices.ServiceLocation;
-using Microsoft.Practices.Unity;
+using Universial.Core.Extensions.Unity;
 using Prism.Events;
 using Prism.Unity;
 
@@ -18,7 +17,7 @@ namespace ImageSorter
 
         protected override void InitializeShell()
         {
-            Application.Current.MainWindow = (Window) Shell;
+            Application.Current.MainWindow = (Window)Shell;
             Application.Current.MainWindow.DataContext = ServiceLocator.Current.GetInstance<ShellViewModel>();
             Application.Current.MainWindow.Show();
         }
@@ -26,7 +25,8 @@ namespace ImageSorter
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
-            Container.RegisterInstance<IEventAggregator>(Container.Resolve<EventAggregator>());
+
+            Container.RegisterInstance<IEventAggregator, EventAggregator>();
         }
     }
 }

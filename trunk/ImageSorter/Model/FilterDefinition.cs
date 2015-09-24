@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ImageSorter.Model
+﻿namespace ImageSorter.Model
 {
-    public class FilterDefinition 
+    public class FilterDefinition
     {
-        public string Name { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public string Name { get; set; } = "Filter";
+        public string StartDate { get; set; } = "12.07.2012";
+        public string EndDate { get; set; } = "12.07.2012";
     }
 }
