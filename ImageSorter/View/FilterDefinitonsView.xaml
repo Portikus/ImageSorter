@@ -8,5 +8,17 @@
              d:DesignHeight="300"
              d:DesignWidth="300"
              mc:Ignorable="d">
-    <DataGrid ItemsSource="{Binding FilterDefinitions}" />
+    <StackPanel Orientation="Horizontal">
+        <DataGrid ItemsSource="{Binding FilterDefinitions}" />
+        <Button Width="30"
+                Height="30"
+                Margin="2"
+                VerticalAlignment="Top"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Command="{Binding AddFilterDefinitionCommand}"
+                Content="+"
+                FontSize="20"
+                Padding="0" />
+    </StackPanel>
 </UserControl>

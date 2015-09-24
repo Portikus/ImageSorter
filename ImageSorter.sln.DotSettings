@@ -1,0 +1,45 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Description/@EntryValue">ViewModelTest</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=CLASS/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=NAMESPACE/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=TestCase/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=TestCase/Order/@EntryValue">2</s:Int64>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Text/@EntryValue">using ImageSorter.Tests.TestUtilities;&#xD;
+using ImageSorter.ViewModel;&#xD;
+using NUnit.Framework;&#xD;
+namespace $NAMESPACE$&#xD;
+{&#xD;
+  public class $CLASS$Test : ViewModelTestBase&lt;$CLASS$&gt;&#xD;
+  {&#xD;
+    [Test]&#xD;
+    public void Test_$TestCase$()&#xD;
+    {&#xD;
+        //Arrange&#xD;
+		$END$&#xD;
+&#xD;
+        //Act&#xD;
+				&#xD;
+		&#xD;
+        //Assert&#xD;
+        Assert.That(()=&gt;SystemUnderTest,Is.False);&#xD;
+    }&#xD;
+  }&#xD;
+}</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/CustomProperties/=FileName/@EntryIndexedValue">TestClass</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/CustomProperties/=Extension/@EntryIndexedValue">cs</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/CustomProperties/=ValidateFileName/@EntryIndexedValue">False</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Scope/=E8F0594528C33E45BBFEC6CFE851095D/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Scope/=E8F0594528C33E45BBFEC6CFE851095D/Type/@EntryValue">InCSharpProjectFile</s:String>
+	
+	
+	
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=CLASS/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=CLASS/Expression/@EntryValue">getFileNameWithoutExtension()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=CLASS/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=NAMESPACE/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=NAMESPACE/Expression/@EntryValue">fileDefaultNamespace()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F7DE978AA4857845AB199F921A426239/Field/=NAMESPACE/Order/@EntryValue">1</s:Int64></wpf:ResourceDictionary>
