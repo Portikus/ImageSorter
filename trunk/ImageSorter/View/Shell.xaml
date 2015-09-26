@@ -10,7 +10,11 @@
         Height="350"
         d:DataContext="{d:DesignInstance viewModel:ShellViewModel}"
         mc:Ignorable="d">
-    <DockPanel>
-        <view:FilterDefinitonsView DataContext="{Binding FilterDefinitionViewModel}" DockPanel.Dock="Right" />
+    <DockPanel Margin="5">
+        <StackPanel DockPanel.Dock="Right">
+            <view:PathControlView DataContext="{Binding PathControlViewModel}" />
+            <view:FilterDefinitonsView DataContext="{Binding FilterDefinitionViewModel}" />
+        </StackPanel>
+        <view:StrucktureControlView DataContext="{Binding StrucktureControlViewModel}" />
     </DockPanel>
 </Window>
