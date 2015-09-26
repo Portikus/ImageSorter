@@ -95,6 +95,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusinessLogic\ImageSearcher.cs" />
+    <Compile Include="Contracts\IImageSearcher.cs" />
     <Compile Include="Model\ExplorerItem.cs" />
     <Compile Include="View\StrucktureControlView.xaml.cs">
       <DependentUpon>StrucktureControlView.xaml</DependentUpon>
@@ -168,9 +170,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLogic\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
