@@ -1,48 +1,19 @@
-﻿using System.Collections.ObjectModel;
-using ImageSorter.Model;
-using Microsoft.Practices.Unity;
-using Prism.Events;
-using Prism.Mvvm;
+﻿using Microsoft.Practices.Unity;
 
 namespace ImageSorter.ViewModel
 {
-    public class ShellViewModel : BindableBase
+    public class ShellViewModel : ViewModelBase
     {
         #region Properties
 
-        private string _targetPath;
-        private string _sourcePath;
-
-        public string TargetPath
-        {
-            get { return _targetPath; }
-            set
-            {
-                _targetPath = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string SourcePath
-        {
-            get { return _sourcePath; }
-            set
-            {
-                _sourcePath = value;
-                OnPropertyChanged();
-            }
-        }
-
-        #region Dependencies
-
-        [Dependency]
-        public IEventAggregator EventAggregator { get; set; }
-
         [Dependency]
         public FilterDefinitionsViewModel FilterDefinitionViewModel { get; set; }
-        
 
-        #endregion
+        [Dependency]
+        public PathControlViewModel PathControlViewModel { get; set; }
+        
+        [Dependency]
+        public StrucktureControlViewModel StrucktureControlViewModel { get; set; }
 
         #endregion
 
