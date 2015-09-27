@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ImageSorter.BusinessLogic;
@@ -100,6 +101,55 @@ namespace ImageSorter.Tests.BusinessLogic
 
             //Assert
             Assert.That(() => images.Count, Is.EqualTo(expected));
+        }
+
+        [Test]
+        [NeedsTestDir]
+        public void Test_if_the_name_attribute_is_set()
+        {
+            //Arrange 
+            var fileName = "Foto1.jpg";
+            CreateFileInTestDirectory(fileName);
+
+            //Act
+            var images = SystemUnderTest.GetImagesFrom(TestDirectory).ToList();
+
+            //Assert
+            Assert.That(() => images.First().Name, Is.EqualTo(fileName));
+        }
+
+        [Test]
+        [NeedsTestDir]
+        public void Test_if_the_fullPath_attribute_is_set()
+        {
+            //Arrange 
+            var fileName = "Foto1.jpg";
+            var fullPath = Path.Combine(TestDirectory,fileName);
+            CreateFileInTestDirectory(fileName);
+
+            //Act
+            var images = SystemUnderTest.GetImagesFrom(TestDirectory).ToList();
+
+            //Assert
+            Assert.That(() => images.First().FullPath, Is.EqualTo(fullPath));
+        }
+
+        [Test]
+        [NeedsTestDir]
+        public void Test_if_the_CreationDate_attribute_is_set()
+        {
+            //Arrange 
+            var fileName = "Foto1.jpg";
+            var fullPath = Path.Combine(TestDirectory, fileName);
+            var creationDate = new DateTime(2000,10,1);
+            CreateFileInTestDirectory(fileName);
+            File.SetLastWriteTime(fullPath,creationDate);
+
+            //Act
+            var images = SystemUnderTest.GetImagesFrom(TestDirectory).ToList();
+
+            //Assert
+            Assert.That(() => images.First().CreationDate, Is.EqualTo(creationDate));
         }
     }
 }
