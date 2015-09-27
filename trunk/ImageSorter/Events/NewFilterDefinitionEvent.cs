@@ -1,9 +1,9 @@
-﻿using ImageSorter.Events.Args;
+﻿using ImageSorter.Model;
 using Prism.Events;
 
 namespace ImageSorter.Events
 {
-    public class NewFilterDefinitionEvent : PubSubEvent<FilterDefinitionEventArgs>
+    public class NewFilterDefinitionEvent : PubSubEvent<FilterDefinition>
     {
     }
 }

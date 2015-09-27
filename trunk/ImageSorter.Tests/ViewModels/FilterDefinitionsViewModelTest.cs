@@ -46,7 +46,7 @@ namespace ImageSorter.Tests.ViewModels
             FilterDefinition filterDefinition = null;
             EventAggregator.GetEvent<NewFilterDefinitionEvent>().Subscribe(e =>
             {
-                filterDefinition = e.NewFilterDefinition;
+                filterDefinition = e;
             });
 
             //Act

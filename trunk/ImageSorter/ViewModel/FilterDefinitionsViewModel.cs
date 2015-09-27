@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using ImageSorter.Events;
-using ImageSorter.Events.Args;
 using ImageSorter.Model;
 using Prism.Commands;
 
@@ -37,7 +36,7 @@ namespace ImageSorter.ViewModel
         {
             var newDefinition = new FilterDefinition();
             _filterDefinitions.Add(newDefinition);
-            EventAggregator.GetEvent<NewFilterDefinitionEvent>().Publish(new FilterDefinitionEventArgs(newDefinition));
+            EventAggregator.GetEvent<NewFilterDefinitionEvent>().Publish(newDefinition);
         }
 
         #endregion
