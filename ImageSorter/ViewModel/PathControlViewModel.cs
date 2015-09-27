@@ -1,4 +1,6 @@
-﻿namespace ImageSorter.ViewModel
+﻿using ImageSorter.Events;
+
+namespace ImageSorter.ViewModel
 {
     public class PathControlViewModel : ViewModelBase
     {
@@ -22,6 +24,15 @@
             {
                 _sourcePath = value;
                 OnPropertyChanged();
+                _evaluateSourcePath();
+            }
+        }
+
+        private void _evaluateSourcePath()
+        {
+            foreach (var path in SourcePath.Split(';'))
+            {
+                EventAggregator.GetEvent<NewSourcePathEvent>().Publish(path.Trim());
             }
         }
     }

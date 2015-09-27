@@ -1,5 +1,7 @@
-﻿using ImageSorter.ViewModel;
+﻿using ImageSorter.Contracts;
+using ImageSorter.ViewModel;
 using Microsoft.Practices.Unity;
+using NSubstitute;
 using NUnit.Framework;
 using Prism.Events;
 using Universial.Core.Extensions.Unity;
@@ -16,6 +18,7 @@ namespace ImageSorter.Tests.TestUtilities
         {
             base.SetUp();
             Container.RegisterInstance<IEventAggregator, EventAggregator>();
+            Container.RegisterInstance(Substitute.For<IImageSearcher>());
             EventAggregator = Container.Resolve<IEventAggregator>();
         }
     }

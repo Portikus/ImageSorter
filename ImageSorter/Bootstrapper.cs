@@ -1,7 +1,10 @@
 ﻿using System.Windows;
+using ImageSorter.BusinessLogic;
+using ImageSorter.Contracts;
 using ImageSorter.View;
 using ImageSorter.ViewModel;
 using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
 using Universial.Core.Extensions.Unity;
 using Prism.Events;
 using Prism.Unity;
@@ -27,6 +30,7 @@ namespace ImageSorter
             base.ConfigureContainer();
 
             Container.RegisterInstance<IEventAggregator, EventAggregator>();
+            Container.RegisterType<IImageSearcher, ImageSearcher>();
         }
     }
 }

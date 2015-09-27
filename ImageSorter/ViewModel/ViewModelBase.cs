@@ -4,9 +4,21 @@ using Prism.Mvvm;
 
 namespace ImageSorter.ViewModel
 {
-    public class ViewModelBase : BindableBase
+    public abstract class ViewModelBase : BindableBase
     {
+        private IEventAggregator _eventAggregator;
+
         [Dependency]
-        public IEventAggregator EventAggregator { get; set; }
+        public IEventAggregator EventAggregator
+        {
+            get { return _eventAggregator; }
+            set
+            {
+                _eventAggregator = value; 
+                RegsiterEvents();
+            }
+        }
+
+        protected virtual void RegsiterEvents() { }
     }
 }
