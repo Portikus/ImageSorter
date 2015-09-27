@@ -23,12 +23,18 @@ namespace ImageSorter.BusinessLogic
 
         public IEnumerable<Image> GetImagesFrom(string path)
         {
-            var files = new List<string>();
             foreach (var searchPattern in SearchPatterns)
             {
-                files.AddRange(Directory.GetFiles(path, searchPattern, SearchOption.AllDirectories));
+                foreach (var filePath in Directory.GetFileSystemEntries(path, searchPattern, SearchOption.AllDirectories))
+                {
+                    var image = new Image(Path.GetFileName(filePath))
+                    {
+                        CreationDate = File.GetLastWriteTime(filePath),
+                        FullPath = filePath
+                    };
+                    yield return image;
+                }
             }
-            return files.Select(file => new Image(file));
         }
     }
 }

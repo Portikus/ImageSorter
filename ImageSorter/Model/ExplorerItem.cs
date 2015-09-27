@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 
 namespace ImageSorter.Model
 {
@@ -23,8 +24,12 @@ namespace ImageSorter.Model
 
     public class Image : ExplorerItem
     {
+        public DateTime CreationDate { get; set; }
+        public string FullPath { get; set; }
+
         public Image(string name) : base(name)
         {
         }
+
     }
 }
