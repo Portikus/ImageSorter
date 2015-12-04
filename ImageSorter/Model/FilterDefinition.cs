@@ -1,9 +1,11 @@
-﻿namespace ImageSorter.Model
+﻿using System;
+
+namespace ImageSorter.Model
 {
     public class FilterDefinition
     {
         public string Name { get; set; } = "FilterName";
-        public string StartDate { get; set; } = "12.07.2012";
-        public string EndDate { get; set; } = "12.07.2012";
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

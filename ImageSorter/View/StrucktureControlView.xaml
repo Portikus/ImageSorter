@@ -17,8 +17,8 @@
                 </HierarchicalDataTemplate>
                 <DataTemplate DataType="{x:Type model:Image}">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="1,2" Text="{Binding Name}"/>
-                        <TextBlock Margin="1,2" Text="|"/>
+                        <TextBlock Margin="1,2" Text="{Binding Name}" />
+                        <TextBlock Margin="1,2" Text="|" />
                         <TextBlock Margin="1,2" Text="{Binding CreationDate, Converter={StaticResource Converter.DateTimeToShortDate}}" />
                     </StackPanel>
                 </DataTemplate>
