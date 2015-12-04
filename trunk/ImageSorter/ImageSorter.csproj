@@ -96,6 +96,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BusinessLogic\ImageSearcher.cs" />
+    <Compile Include="BusinessLogic\ImageStruckturer.cs" />
     <Compile Include="Contracts\IImageSearcher.cs" />
     <Compile Include="Events\NewSourcePathEvent.cs" />
     <Compile Include="Model\ExplorerItem.cs" />
